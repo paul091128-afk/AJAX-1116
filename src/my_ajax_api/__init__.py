@@ -1,4 +1,5 @@
-from flask import Flask
+from flask import Flask, request
+
 
 def create_app():
     app = Flask(__name__)
@@ -18,7 +19,12 @@ def create_app():
     @app.get("/")
     def get_root():
         return ({"message": "Hello from my-ajax-api!"}, 201)
-    
+
+    #查詢字串參數
+    @app.get("/api/q1")
+    def my_q1():
+        id = request.args.get("id", 1, type=int)
+        return {"id": id}
     return app
 
 def main() -> None:
