@@ -1,0 +1,39 @@
+@baseUrl = http://127.0.0.1:8000
+
+### 分隔線
+
+# 一般註解一樣井字號*1
+GET {{baseUrl}}/api/fruits
+
+### 分隔線
+
+GET {{baseUrl}}
+
+### 分隔線
+# 新增資料
+
+POST {{baseUrl}}/api/fruits
+Content-Type: application/json
+
+{
+    "name": "草莓",
+    "price": 38
+}
+
+### 分隔線
+#刪除資料
+
+DELETE {{baseUrl}}/api/fruits/10
+
+### 分隔線
+# 修改資料
+
+PUT {{baseUrl}}/api/fruits/2
+Content-Type: application/json
+
+{
+    "name": "大草莓",
+    "price": 200
+}
+
+### 分隔線
